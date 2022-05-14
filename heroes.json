@@ -19,11 +19,20 @@
       "element": "water"
     }
   ],
-  "filters": [
-    "all",
-    "fire",
-    "water",
-    "wind",
-    "earth"
-  ]
+  "filters": {
+    "clazzNames": [
+      "btn btn-outline-dark",
+      "btn btn-danger",
+      "btn btn-primary",
+      "btn btn-success",
+      "btn btn-secondary"
+    ],
+    "filtersName": [
+      "all",
+      "fire",
+      "water",
+      "wind",
+      "earth"
+    ]
+  }
 }

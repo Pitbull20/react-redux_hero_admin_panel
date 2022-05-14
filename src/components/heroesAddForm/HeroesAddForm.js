@@ -2,7 +2,6 @@ import { useHttp } from '../../hooks/http.hook';
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { filtersFetched, addHero } from '../../actions';
-
 // Задача для этого компонента:
 // Реализовать создание нового героя с введенными данными. Он должен попадать
 // в общее состояние и отображаться в списке + фильтроваться
@@ -14,17 +13,24 @@ import { filtersFetched, addHero } from '../../actions';
 // данных из фильтров
 
 const HeroesAddForm = () => {
-	const { filters, heroes } = useSelector(state => state);
+	const filters = useSelector(state => state.filters.filtersName);
+	const heroes = useSelector(state => state.heroes);
 	const dispatch = useDispatch();
 	const { request } = useHttp();
 	const [heroName, setHeroName] = useState('');
 	const [heroDescription, setHeroDescription] = useState('');
 	const [heroElement, setHeroElement] = useState('');
-
 	const addHeroToGlobalState = e => {
 		e.preventDefault();
 		if (heroName && heroDescription && heroElement) {
-			dispatch(addHero(heroName, heroDescription, heroElement));
+			dispatch(
+				addHero(
+					heroName,
+					heroDescription,
+					heroElement,
+					heroes.length + 10
+				)
+			);
 			request(
 				'http://localhost:3001/heroes',
 				'POST',
@@ -32,11 +38,12 @@ const HeroesAddForm = () => {
 			);
 		}
 	};
-
+	console.log(heroes);
 	useEffect(() => {
 		request('http://localhost:3001/filters').then(data =>
 			dispatch(filtersFetched(data))
 		);
+		// eslint-disable-next-line
 	}, []);
 
 	return (
@@ -83,11 +90,9 @@ const HeroesAddForm = () => {
 					onChange={e => setHeroElement(e.currentTarget.value)}
 				>
 					<option>Я владею элементом...</option>
-					{filters.map((item, i) => (
-						<option value={item} key={i}>
-							{item}
-						</option>
-					))}
+					{filters?.map(item => {
+						return <option value={item}>{item}</option>;
+					})}
 				</select>
 			</div>
 
