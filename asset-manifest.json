@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/react-redux_hero_admin_panel/static/css/main.39767111.chunk.css",
+    "main.js": "/react-redux_hero_admin_panel/static/js/main.b1f23ff1.chunk.js",
+    "main.js.map": "/react-redux_hero_admin_panel/static/js/main.b1f23ff1.chunk.js.map",
+    "runtime-main.js": "/react-redux_hero_admin_panel/static/js/runtime-main.61c02661.js",
+    "runtime-main.js.map": "/react-redux_hero_admin_panel/static/js/runtime-main.61c02661.js.map",
+    "static/css/2.c62e3214.chunk.css": "/react-redux_hero_admin_panel/static/css/2.c62e3214.chunk.css",
+    "static/js/2.c5158556.chunk.js": "/react-redux_hero_admin_panel/static/js/2.c5158556.chunk.js",
+    "static/js/2.c5158556.chunk.js.map": "/react-redux_hero_admin_panel/static/js/2.c5158556.chunk.js.map",
+    "index.html": "/react-redux_hero_admin_panel/index.html",
+    "static/css/2.c62e3214.chunk.css.map": "/react-redux_hero_admin_panel/static/css/2.c62e3214.chunk.css.map",
+    "static/css/main.39767111.chunk.css.map": "/react-redux_hero_admin_panel/static/css/main.39767111.chunk.css.map",
+    "static/js/2.c5158556.chunk.js.LICENSE.txt": "/react-redux_hero_admin_panel/static/js/2.c5158556.chunk.js.LICENSE.txt",
+    "static/media/app.scss": "/react-redux_hero_admin_panel/static/media/hero_bg.0540b794.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.61c02661.js",
+    "static/css/2.c62e3214.chunk.css",
+    "static/js/2.c5158556.chunk.js",
+    "static/css/main.39767111.chunk.css",
+    "static/js/main.b1f23ff1.chunk.js"
+  ]
+}
