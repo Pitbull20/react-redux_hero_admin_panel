@@ -1,16 +1,4 @@
-import { deleteHero } from '../../actions';
-import { useDispatch } from 'react-redux';
-import { useHttp } from '../../hooks/http.hook';
-const HeroesListItem = ({ id, name, description, element }) => {
-	const dispatch = useDispatch();
-	const { request } = useHttp();
-	const deleteItem = e => {
-		const id = +e.currentTarget.parentElement.getAttribute('data-id');
-		console.log(id);
-		dispatch(deleteHero(id));
-		request(`http://localhost:3001/heroes/${id}`, 'DELETE');
-	};
-
+const HeroesListItem = ({ name, description, element, onDelete }) => {
 	let elementClassName;
 
 	switch (element) {
@@ -45,14 +33,13 @@ const HeroesListItem = ({ id, name, description, element }) => {
 				<p className='card-text'>{description}</p>
 			</div>
 			<span
+				onClick={onDelete}
 				className='position-absolute top-0 start-100 translate-middle badge border rounded-pill bg-light'
-				data-id={id}
 			>
 				<button
 					type='button'
 					className='btn-close btn-close'
 					aria-label='Close'
-					onClick={e => deleteItem(e)}
 				></button>
 			</span>
 		</li>
